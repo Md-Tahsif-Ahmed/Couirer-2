@@ -1,0 +1,11 @@
+@keyframes colorChange {
+    0% { color: rgb(211, 246, 210); }
+    25% { color: rgb(173, 215, 107); }
+    50% { color: rgb(60, 235, 60); }
+    75% { color: rgb(4, 249, 4); }
+    100% { color: rgb(7, 125, 29); }
+}
+
+.animated-heading {
+    animation: colorChange 15s infinite; /* Change duration and infinite for continuous effect */
+}

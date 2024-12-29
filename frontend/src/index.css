@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background-color: #f9f9f9; /* Light background for consistency */
+    color: #000; /* Text color for readability */
+  }
+
+  .app-container {
+    min-height: 100vh; /* Full height for the page */
+    background-color: #ffffff; /* White background for main container */
+  }
+
+input, textarea,select{
+    background-color: #ffffff;
+}
+

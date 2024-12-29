@@ -1,0 +1,23 @@
+@media print {
+    body * {
+      visibility: hidden; /* Hide everything on the page */
+    }
+    
+    .printable-label, .printable-label * {
+      visibility: visible; /* Show the label content */
+    }
+  
+    .printable-label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: auto;
+    }
+  
+    /* Optionally, hide the print button in print view */
+    button {
+      display: none;
+    }
+  }
+  

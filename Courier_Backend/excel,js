@@ -1,0 +1,56 @@
+// generateExcel.js
+const XLSX = require('xlsx');
+
+// Sample data based on the ConsignmentSchema
+const consignmentData = [
+  {
+    sphone: "1234567890",
+    rphone: "0987654321",
+    sname: "Sender One",
+    rname: "Receiver One",
+    semail: "sender1@example.com",
+    remail: "receiver1@example.com",
+    saddress: "123 Sender St.",
+    raddress: "456 Receiver Rd.",
+    sdistrict: "Sender District",
+    rdistrict: "Receiver District",
+    codAmount: 100.50,
+    invoice: "INV-001",
+    note: "Handle with care",
+    weight: 2.5,
+    dtype: "Standard",
+    createdAt: new Date()
+  },
+  {
+    sphone: "2234567890",
+    rphone: "1987654321",
+    sname: "Sender Two",
+    rname: "Receiver Two",
+    semail: "sender2@example.com",
+    remail: "receiver2@example.com",
+    saddress: "789 Sender St.",
+    raddress: "101 Receiver Rd.",
+    sdistrict: "Sender District 2",
+    rdistrict: "Receiver District 2",
+    codAmount: 150.75,
+    invoice: "INV-002",
+    note: "Fragile item",
+    weight: 1.5,
+    dtype: "Express",
+    createdAt: new Date()
+  },
+  // Add more sample data as needed
+];
+
+// Create a new workbook and a new worksheet
+const workbook = XLSX.utils.book_new();
+const worksheet = XLSX.utils.json_to_sheet(consignmentData);
+
+// Append the worksheet to the workbook
+XLSX.utils.book_append_sheet(workbook, worksheet, 'Consignments');
+
+// Write the workbook to a file
+const filePath = './consignments.xlsx';
+XLSX.writeFile(workbook, filePath);
+
+console.log(`Excel file generated at: ${filePath}`);
